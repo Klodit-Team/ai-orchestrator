@@ -47,9 +47,9 @@ RUN for dir in /workspace/mcp/*/; do \
     done
 
 # ── AI agent scripts (spawned as child processes by the orchestrator) ──
-COPY ai-agents/ai-agents/package*.json /workspace/ai-agents/
+COPY ai-agents/package*.json /workspace/ai-agents/
 RUN npm --prefix /workspace/ai-agents ci --legacy-peer-deps
-COPY ai-agents/ai-agents/src /workspace/ai-agents/src
+COPY ai-agents/src /workspace/ai-agents/src
 
 ENV NODE_ENV=production
 ENV AI_AGENTS_PATH=/workspace/ai-agents/src/agents
