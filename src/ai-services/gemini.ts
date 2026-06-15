@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios';
 
 const GEMINI_URL = (apiKey: string) =>
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
 
 async function withRetry<T>(fn: () => Promise<T>, retries = 3): Promise<T> {
   let lastErr: unknown;
