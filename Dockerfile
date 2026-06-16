@@ -54,4 +54,4 @@ COPY ai-agents/src /workspace/ai-agents/src
 ENV NODE_ENV=production
 ENV AI_AGENTS_PATH=/workspace/ai-agents/src/agents
 
-CMD ["node", "ai-orchestrator/dist/main.js"]
+CMD ["sh", "-c", "node ai-orchestrator/dist/ai-services/index.js & node ai-orchestrator/dist/main.js"]
